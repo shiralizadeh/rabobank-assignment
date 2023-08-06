@@ -6,56 +6,45 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface RaboForm {
+    }
+    interface RaboInput {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLRaboFormElement extends Components.RaboForm, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLRaboFormElement: {
+        prototype: HTMLRaboFormElement;
+        new (): HTMLRaboFormElement;
+    };
+    interface HTMLRaboInputElement extends Components.RaboInput, HTMLStencilElement {
+    }
+    var HTMLRaboInputElement: {
+        prototype: HTMLRaboInputElement;
+        new (): HTMLRaboInputElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "rabo-form": HTMLRaboFormElement;
+        "rabo-input": HTMLRaboInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface RaboForm {
+    }
+    interface RaboInput {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "rabo-form": RaboForm;
+        "rabo-input": RaboInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "rabo-form": LocalJSX.RaboForm & JSXBase.HTMLAttributes<HTMLRaboFormElement>;
+            "rabo-input": LocalJSX.RaboInput & JSXBase.HTMLAttributes<HTMLRaboInputElement>;
         }
     }
 }
