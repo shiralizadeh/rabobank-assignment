@@ -1,3 +1,8 @@
-:host {
-  display: block;
+button {
+  margin: 10px;
+}
+
+.rabo-validation-message {
+  color: red;
+  font-size: 0.8rem;
 }

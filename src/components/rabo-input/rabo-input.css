@@ -1,3 +1,44 @@
-:host {
-  display: block;
+.rabo-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-bottom: 1rem;
+}
+
+.rabo-input-container div {
+  display: flex;
+  place-items: center;
+  margin: 0 2px;
+}
+
+.rabo-input-container input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.rabo-input-container .rabo-label {
+  width: 100px;
+}
+
+.rabo-input-container input.error {
+  border: 1px solid red;
+}
+
+.rabo-input-fixed {
+  text-align: right;
+  width: 100px;
+}
+
+.rabo-input-fixed input {
+  text-align: right;
+}
+
+.rabo-input-floating {
+  width: 50px;
+}
+
+.rabo-input-floating input {
+  text-align: left;
 }

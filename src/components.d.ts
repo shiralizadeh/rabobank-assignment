@@ -9,7 +9,14 @@ export namespace Components {
     interface RaboForm {
     }
     interface RaboInput {
+        "getValue": () => Promise<number>;
+        "label": string;
+        "name": string;
     }
+}
+export interface RaboFormCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRaboFormElement;
 }
 declare global {
     interface HTMLRaboFormElement extends Components.RaboForm, HTMLStencilElement {
@@ -31,8 +38,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface RaboForm {
+        "onOnSubmit"?: (event: RaboFormCustomEvent<any>) => void;
     }
     interface RaboInput {
+        "label"?: string;
+        "name"?: string;
     }
     interface IntrinsicElements {
         "rabo-form": RaboForm;
