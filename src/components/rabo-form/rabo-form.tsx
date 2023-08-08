@@ -12,7 +12,7 @@ export class RaboForm {
   validationError: string;
 
   @Event()
-  onSubmit: EventEmitter<any>;
+  onSubmit?: EventEmitter<any>;
 
   render() {
     return (
@@ -27,6 +27,8 @@ export class RaboForm {
                 alert(JSON.stringify(values, null, 2));
 
                 this.validationError = '';
+
+                this.onSubmit && this.onSubmit.emit(values);
               } catch (error) {
                 this.validationError = error;
               }
